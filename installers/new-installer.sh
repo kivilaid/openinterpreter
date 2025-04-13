@@ -44,7 +44,7 @@ echo "export PATH=\"$VENV_DIR/bin:\$PATH\"" >> "$SHELL_CONFIG"
 
 # Ask for API key
 echo -n "Please enter your OpenAI API key: "
-read -s OPENAI_API_KEY
+read -r OPENAI_API_KEY </dev/tty
 echo
 
 echo "Testing..."
