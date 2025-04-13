@@ -43,9 +43,9 @@ esac
 echo "export PATH=\"$VENV_DIR/bin:\$PATH\"" >> "$SHELL_CONFIG"
 
 # Ask for API key
-echo "Please enter your OpenAI API key:"
+echo -n "Please enter your OpenAI API key: "
 read -s OPENAI_API_KEY
-
+echo
 
 echo "Testing..."
 echo "Say hello world!" | interpreter --model gpt-4o --api-key "$OPENAI_API_KEY"
