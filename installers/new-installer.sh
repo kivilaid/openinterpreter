@@ -42,8 +42,13 @@ case "$SHELL" in
 esac
 echo "export PATH=\"$VENV_DIR/bin:\$PATH\"" >> "$SHELL_CONFIG"
 
+# Ask for API key
+echo "Please enter your OpenAI API key:"
+read -s OPENAI_API_KEY
+
+
 echo "Testing..."
-echo "Say hello world!" | interpreter --model gpt-4o-mini
+echo "Say hello world!" | interpreter --model gpt-4o --api-key "$OPENAI_API_KEY"
 
 echo
 echo "Installation complete!"
