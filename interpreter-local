@@ -1,0 +1,8 @@
+#!/bin/bash
+# Wrapper script to run local Open Interpreter with automatic venv activation
+
+# Get the directory where this script is located
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+# Activate the virtual environment and run interpreter with all arguments
+source "$SCRIPT_DIR/venv/bin/activate" && exec "$SCRIPT_DIR/venv/bin/interpreter" "$@"
